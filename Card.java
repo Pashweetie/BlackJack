@@ -46,7 +46,7 @@ public class Card  {
 		}
 		return image;
 	}
-	public void draw(Graphics g, Rectangle r) {
+	public void draw(Graphics g, int x, int y, int width, int height) {
 		g.drawImage(image, r.x, r.y, r.width, r.height, null);
 	}
 	// public class MoviePoster {
