@@ -1,8 +1,10 @@
 import java.util.Random;
+import java.awt.*;
+import java.applet.*;
+import java.awt.Graphics;
 public class Deck {
 	private Card[] cards = new Card[52];
 	private Card card;
-	private Rectangle r = new Rectangle(10,10,72,96)
 	private String[] names = {"2","3","4","5","6","7","8","9","10","J","Q","K","A"};
 	private int[] values  = {2,3,4,5,6,7,8,9,10,10,10,10,11};
 	private String[] suit = {"Hearts", "Spades", "Diamonds", "Clubs"};
@@ -19,9 +21,6 @@ public class Deck {
 			}		
 		}	
 	}
-	// public int deal(){
-	// 	this.numberOfCards--;
-	// }
 	public void shuffle(){
 		for (int i = 52; i>=1; i--) {
 			int instant = mixItUp.nextInt(i);
@@ -32,8 +31,11 @@ public class Deck {
 	}
 	public void print(){
 		for (int i = 0; i<cards.length; i++) {
-			System.out.println(this.cards[i].name()+" "+this.cards[i].suit());
-			System.out.println(cards[i].draw(g,10+(i*72),10,72,96);
+			int z = 0;
+			if (i == 10) {
+				z++;
+			}
+			cards[i].draw(10+(i*72),10+(z*96),72,96);
 		}
 	}
 }

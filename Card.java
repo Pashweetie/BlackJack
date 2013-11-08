@@ -8,15 +8,16 @@ import java.io.IOException;
 import javax.imageio.ImageIO;
 
 public class Card  {	
-	String name;
-	int number;
-	String suit;
-	Image image;
+	private String name;
+	private int number;
+	private String suit;
+	private Image image;
+	private Graphics g;
 	public Card(String name,int number, String suit){
 		this.number = number;
 		this.name = name;
 		this.suit = suit;
-		this.image = Card.loadImage(name, suit);
+		this.image = Card.loadImage();
 	}
 	public int number(){
 		return this.number;
@@ -33,10 +34,8 @@ public class Card  {
 	public void setSuit(String suit){
 		this.suit = suit;
 	}
-	public static Image loadImage(String name, String suit){
+	public Image loadImage(){
 		String path = null;
-		Image image = null;
-
 		try{
 			path = "cards" + File.separator + name + suit + ".png";
 			image = ImageIO.read(new File(path));
@@ -46,8 +45,8 @@ public class Card  {
 		}
 		return image;
 	}
-	public void draw(Graphics g, int x, int y, int width, int height) {
-		g.drawImage(image, r.x, r.y, r.width, r.height, null);
+	public void draw(int x, int y, int width, int height) {
+		g.drawImage(image, x, y, width, height, null);
 	}
 	// public class MoviePoster {
 
