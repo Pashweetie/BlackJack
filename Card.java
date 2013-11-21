@@ -17,7 +17,7 @@ public class Card  {
 		this.number = number;
 		this.name = name;
 		this.suit = suit;
-		this.image = Card.loadImage();
+		this.image = loadImage();
 	}
 	public int number(){
 		return this.number;
@@ -45,8 +45,9 @@ public class Card  {
 		}
 		return image;
 	}
-	public void draw(int x, int y, int width, int height) {
+	public void draw(Graphics g,int x, int y, int width, int height) {
 		g.drawImage(image, x, y, width, height, null);
+		System.out.println("Cards drawing function works");
 	}
 	// public class MoviePoster {
 

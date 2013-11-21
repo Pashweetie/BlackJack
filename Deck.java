@@ -29,13 +29,19 @@ public class Deck {
 			cards[i-1] = instantValue;
 		}
 	}
-	public void print(){
-		for (int i = 0; i<cards.length; i++) {
-			int z = 0;
-			if (i == 10) {
-				z++;
-			}
-			cards[i].draw(10+(i*72),10+(z*96),72,96);
-		}
+	// public void print(Graphics g){
+	// 	int y = 0;
+	// 	int x = 0;
+	// 	for (int i = 0; i<cards.length; i++) {
+	// 		if ((i%13)==0) {
+	// 			y++;
+	// 			x=0;
+	// 		}
+	// 		cards[i].draw(g,10+(x*72),10+(y*96),72,96);
+	// 		x++;
+	// 	}
+	// }
+	public Card getCard(int count) {
+		return cards[count];
 	}
 }
