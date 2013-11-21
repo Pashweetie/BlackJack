@@ -32,6 +32,7 @@ public class BlackJack extends Applet implements ActionListener {
 	private JLabel label;
 	private JButton add, stay;
 	private Boolean gameOver = false;
+	private Boolean playerWon = false;
 	Dealer dealer;
 	Human human;			
 	public void init() {
@@ -51,9 +52,22 @@ public class BlackJack extends Applet implements ActionListener {
 
 		System.out.println("BlackJack init is running");
 	}
+	public static void main(String[] args) {
+		if (gameOver) {
+			if (human.getValue()>dealer.getValue() && human.getValue<=21) {
+				playerWon= true;
+			}
+		}
+		if (playerWon) {
+			
+		}
+	}
 	public void actionPerformed(ActionEvent ae) {
 		if("stay".equals(ae.getActionCommand())){
 			gameOver=true;
+		} else if ("add".equals(ae.getActionCommand())) {
+			dealer.hit(player);
+			repaint();
 		}
 	}
 	public void paint(Graphics g) {			
