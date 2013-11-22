@@ -1,11 +1,10 @@
 import java.awt.*;
 import java.applet.*;
-import java.awt.Graphics;
 public class Dealer extends Player{
 	private Deck deck = new Deck();
 	private int totalCardValue = 0;
 	public Dealer(){
-
+		cardValue();
 	}
 	public void hit(Player player){
 		player.setCard(deck.getCard(cardsDrawn));
@@ -16,7 +15,6 @@ public class Dealer extends Player{
 
 	// }
 	public void run(){
-		int totalCardValue = 0;
 		while (totalCardValue<21) {
 			if (hand.getHand().length<11) {
 				hand.setCard(deck.getCard(cardsDrawn));
@@ -28,6 +26,11 @@ public class Dealer extends Player{
 	
 	public void setCard(Card card){
 		hand.setCard(card);
+	}
+	public void cardValue() {
+		for (int i; i < hand.getHand().length ; i++) {
+			totalCardValue = totalCardValue + hand.getCard().number();
+		}
 	}
 	public void print(Graphics g) {
 		hand.print(g,3);

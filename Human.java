@@ -4,9 +4,9 @@ import java.awt.Graphics;
 public class Human extends Player{
 	private int totalCardValue;
 	public Human(){
-
+		cardValue();
 	}
-	public static void cardValue() {
+	public void cardValue() {
 		for (int i;i<hand.getHand().length ; i++) {
 			totalCardValue = totalCardValue + hand.getCard().number();
 		}

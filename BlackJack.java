@@ -1,38 +1,15 @@
-import javax.swing.*;
 import java.awt.*;
+import java.applet.*;
+
 import java.awt.event.*;
+import javax.swing.*;
 
-public class NumberPanel extends JPanel implements ActionListener, MouseListener {
-	
-
-	private int value = 0;
-
-	public NumberPanel() {
-		super();
-
-		label = new JLabel(value+"");
-		label.setFont(new Font("sansserif", Font.BOLD, 32));
-		this.add(label);
-
-
-		this.addMouseListener(this);
-	}
-	public void actionPerformed(ActionEvent ae) {
-		if("+1".equals(ae.getActionCommand())){
-			value++;
-			label.setText(value+"");
-			repaint();
-		}else if ("-1".equals(ae.getActionCommand())) {
-			value --;
-			label.setText(value+"");
-			repaint();
-		}
-	}
 public class BlackJack extends Applet implements ActionListener {
 	private JLabel label;
 	private JButton add, stay;
 	private Boolean gameOver = false;
 	private Boolean playerWon = false;
+	String title2;
 	Dealer dealer;
 	Human human;			
 	public void init() {
@@ -44,7 +21,7 @@ public class BlackJack extends Applet implements ActionListener {
 		add.addActionListener(this);
 		this.add(add);
 
-		title = "stay";
+		title2 = "stay";
 		stay = new JButton(title);
 		stay.setActionCommand(title);
 		stay.addActionListener(this);
@@ -52,9 +29,9 @@ public class BlackJack extends Applet implements ActionListener {
 
 		System.out.println("BlackJack init is running");
 	}
-	public static void main(String[] args) {
+	public void main(String[] args) {
 		if (gameOver) {
-			if (human.getValue()>dealer.getValue() && human.getValue<=21) {
+			if (human.getValue()>dealer.getValue() && human.getValue()<=21) {
 				playerWon= true;
 			}
 		}
@@ -66,12 +43,12 @@ public class BlackJack extends Applet implements ActionListener {
 		if("stay".equals(ae.getActionCommand())){
 			gameOver=true;
 		} else if ("add".equals(ae.getActionCommand())) {
-			dealer.hit(player);
+			dealer.hit(human);
 			repaint();
 		}
 	}
 	public void paint(Graphics g) {			
-		dealer.paint(g);
+		dealer.print(g);
 		human.paint(g);
 	}
 }
