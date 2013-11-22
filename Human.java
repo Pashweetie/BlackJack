@@ -7,7 +7,7 @@ public class Human extends Player{
 		cardValue();
 	}
 	public void cardValue() {
-		for (int i;i<hand.getHand().length ; i++) {
+		for (int i =0;i<hand.getHand().length ; i++) {
 			totalCardValue = totalCardValue + hand.getCard().number();
 		}
 	}

@@ -28,7 +28,7 @@ public class Dealer extends Player{
 		hand.setCard(card);
 	}
 	public void cardValue() {
-		for (int i; i < hand.getHand().length ; i++) {
+		for (int i =0; i < hand.cardNumber() ; i++) {
 			totalCardValue = totalCardValue + hand.getCard().number();
 		}
 	}
