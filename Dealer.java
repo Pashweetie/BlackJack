@@ -5,6 +5,8 @@ public class Dealer extends Player{
 	private int totalCardValue = 0;
 	public Dealer(){
 		cardValue();
+		hit(this);
+		hit(this);
 	}
 	public void hit(Player player){
 		player.setCard(deck.getCard(cardsDrawn));

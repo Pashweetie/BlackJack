@@ -5,6 +5,7 @@ public class Human extends Player{
 	private int totalCardValue;
 	public Human(){
 		cardValue();
+
 	}
 	public void cardValue() {
 		for (int i =0;i<hand.getHand().length ; i++) {

@@ -29,18 +29,18 @@ public class Deck {
 			cards[i-1] = instantValue;
 		}
 	}
-	// public void print(Graphics g){
-	// 	int y = 0;
-	// 	int x = 0;
-	// 	for (int i = 0; i<cards.length; i++) {
-	// 		if ((i%13)==0) {
-	// 			y++;
-	// 			x=0;
-	// 		}
-	// 		cards[i].draw(g,10+(x*72),10+(y*96),72,96);
-	// 		x++;
-	// 	}
-	// }
+	public void print(Graphics g){
+		int y = 0;
+		int x = 0;
+		for (int i = 0; i<cards.length; i++) {
+			if ((i%13)==0) {
+				y++;
+				x=0;
+			}
+			cards[i].draw(g,10+(x*72),10+(y*96),72,96);
+			x++;
+		}
+	}
 	public Card getCard(int count) {
 		return cards[count];
 	}

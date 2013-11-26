@@ -12,4 +12,7 @@ public class Player {
 	public void setCard(Card card) {
 
 	}
+	public void print(Graphics g){
+		
+	}
 }

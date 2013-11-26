@@ -36,4 +36,7 @@ public class Hand {
 		}
 		
 	}
+	public int cardNumber(){
+		return cardNumber;
+	}
 }
